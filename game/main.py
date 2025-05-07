@@ -2,6 +2,7 @@ from settings import *
 from player import Player
 from t_pin import *
 from glue import *
+from wood import *
 
 class Game:
     def __init__(self):
@@ -13,8 +14,9 @@ class Game:
         self.all_sprites = pygame.sprite.Group()
         self.collision_sprites = pygame.sprite.Group()
         self.player_sprite = pygame.sprite.Group()
-        self.pins = T_Pins((self.all_sprites, self.collision_sprites), collided_sprite=self.player_sprite)
+        self.t_pins = T_Pins((self.all_sprites, self.collision_sprites), collided_sprite=self.player_sprite)
         self.glue = Glue((self.all_sprites, self.collision_sprites), collided_sprite=self.player_sprite)
+        self.wood = WoodPile((self.all_sprites, self.collision_sprites), player=self.player_sprite)
         self.player = Player((self.all_sprites, self.player_sprite), collided_sprite=self.collision_sprites)
         self.background = pygame.image.load(join('assets', 'wood_background.jpg')).convert()
         self.background = pygame.transform.smoothscale_by(self.background, 3.35)

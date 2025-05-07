@@ -29,7 +29,6 @@ class T_Pin(pygame.sprite.Sprite):
         self.image = pygame.transform.rotozoom(self.image, rotate_amt, 1)
         self.rect = self.image.get_frect(center=(randint(150, 175), randint(150, 175)))
         self.player = player
-        self.held = 0
     def update(self, dt):
         if pygame.sprite.spritecollide(self, self.player, False, pygame.sprite.collide_mask):
             if pygame.mouse.get_pressed()[0]:
