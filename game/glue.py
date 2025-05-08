@@ -8,8 +8,8 @@ class Glue(pygame.sprite.Sprite):
         self.image = pygame.transform.rotozoom(self.image, -45, 1)
         self.rect = self.image.get_frect(topright=(WINDOW_WIDTH - 20, 20))
         self.player = collided_sprite
-    def update(self, dt):
-        if pygame.sprite.spritecollide(self, self.player, False, pygame.sprite.collide_mask):
-            if pygame.mouse.get_pressed()[0]:
-                self.rect.center = pygame.mouse.get_pos()
+    # def update(self, dt):
+    #     if pygame.sprite.spritecollide(self, self.player, False, pygame.sprite.collide_mask):
+    #         if pygame.mouse.get_pressed()[0]:
+    #             self.rect.center = pygame.mouse.get_pos()
         

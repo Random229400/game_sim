@@ -25,7 +25,7 @@ class Wood(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (120, 120))
         self.rect = self.image.get_frect(center=(randint(150, 175), randint(150, 175)))
         self.player = player
-    def update(self, dt):
-        if pygame.sprite.spritecollide(self, self.player, False, pygame.sprite.collde_mask):
-            if pygame.mouse.get_pressed()[0]:
-                self.rect.center
+    # def update(self, dt):
+    #     if pygame.sprite.spritecollide(self, self.player, False, pygame.sprite.collde_mask):
+    #         if pygame.mouse.get_pressed()[0]:
+    #             self.rect.center

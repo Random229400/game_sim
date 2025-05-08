@@ -16,6 +16,7 @@ class Player(pygame.sprite.Sprite):
         else:
             self.image = self.image2
     def update(self, dt):
-        mouse_pos = pygame.mouse.get_pos()
-        self.rect.center = mouse_pos
+        for sprite in self.collided_sprite:
+            if pygame.mouse.get_pressed() and pygame.Rect.colliderect(self.rect, sprite.rect):
+                sprite.rect.center = pygame.mouse.get_pos()
         self.collision()
